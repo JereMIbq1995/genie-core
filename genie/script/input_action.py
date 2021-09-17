@@ -1,5 +1,4 @@
-from genie.scripting.action import Action
-
+from genie.script.action import Action
 
 class InputAction(Action):
     pass
