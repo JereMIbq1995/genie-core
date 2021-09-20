@@ -55,7 +55,9 @@ class Actors:
         
     def with_traits(self, *types):
         """Finds those actors with the given types of traits.
-
+        
+        types: a tuple of traits passed in as data types (not object)
+        
         Returns:
             set: A set of actors.
         """
