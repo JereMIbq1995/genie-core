@@ -127,7 +127,7 @@ class TestAction(unittest.TestCase):
     
     def test_apply_changes_clears_removed_actions(self):
         """
-        Ensures that apply_changes() clears the removed_actions set in preparation
+        Ensures that apply_changes() clears the _removed_actions set in preparation
         for the next frame.
         """
         # First, give the script a list of actions and removed actions.
@@ -154,7 +154,7 @@ class TestAction(unittest.TestCase):
     
     def test_get_actions_return_all_actions_with_specfied_type(self):
         """
-        Ensures that get_actions return all the actions in the
+        Ensures that get_actions return all the correct actions in the
         _current_actions set and doesn't miss anything
         """
         # Add the 3 actions to the script without using add_actor so the test is
@@ -172,8 +172,7 @@ class TestAction(unittest.TestCase):
         self.assertIn(self._action4, self._actions._current_actions)
         self.assertIn(self._action5, self._actions._current_actions)
 
-        # All 3 actors have the Blue() trait, the return set should
-        # include all 3
+        # INPUT: Only 1 and 4 should return, everything else should NOT return
         actions_INPUT = self._actions.get_actions("INPUT")
         self.assertIn(self._action1, actions_INPUT)
         self.assertIn(self._action4, actions_INPUT)
@@ -181,7 +180,7 @@ class TestAction(unittest.TestCase):
         self.assertNotIn(self._action3, actions_INPUT)
         self.assertNotIn(self._action5, actions_INPUT)
 
-        # Only 2 and 3 should return, 1 should NOT return
+        # OUTPUT: Only 3 and 5 should return, everything else should NOT return
         actions_OUTPUT = self._actions.get_actions("OUTPUT")
         self.assertIn(self._action3, actions_OUTPUT)
         self.assertIn(self._action5, actions_OUTPUT)
@@ -189,7 +188,7 @@ class TestAction(unittest.TestCase):
         self.assertNotIn(self._action2, actions_OUTPUT)
         self.assertNotIn(self._action4, actions_OUTPUT)
 
-        # Only 1 and 3 should return, 2 should NOT return
+        # UPDATE: Only 2 should return, everything else should NOT return
         actions_UPDATE = self._actions.get_actions("UPDATE")
         self.assertIn(self._action2, actions_UPDATE)
         self.assertNotIn(self._action1, actions_UPDATE)
@@ -199,8 +198,7 @@ class TestAction(unittest.TestCase):
     
     def test_get_actions_return_result_sorted_by_priority(self):
         """
-        Ensures that get_actions return all the actions in the
-        _current_actions set and doesn't miss anything
+        Ensures that get_actions return a sorted result
         """
         # Add the 5 actions to the script without using add_actor so the test is
         # not dependent on the previous tests
