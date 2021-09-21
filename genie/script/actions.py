@@ -54,5 +54,5 @@ class Actions:
         Returns:
             List[Action]: A list of actions.
         """
-        return sorted(a for a in self._current_actions if isinstance(a, type_),
+        return sorted([a for a in self._current_actions if a.get_type() == type_],
             key=lambda x: x.get_priority())
