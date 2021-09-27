@@ -47,7 +47,6 @@ class Action(ABC):
 
     def __init__(self, priority, type : str = ""):
         self._priority = priority
-        self._type = type
         
     @abstractmethod
     def execute(self, actors, actions, clock, callback):
@@ -68,9 +67,3 @@ class Action(ABC):
 
     def set_priority(self, priority):
         self._priority = priority
-    
-    def get_type(self):
-        return self._type
-    
-    def set_type(self, type):
-        self._type = type

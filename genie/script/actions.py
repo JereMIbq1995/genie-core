@@ -49,10 +49,10 @@ class Actions:
         """Gets the actions with the given type.
         
         Args:
-            type_: str, The actions's type.
+            type_: base type, The actions's type (InputAction).
         
         Returns:
             List[Action]: A list of actions.
         """
-        return sorted([a for a in self._current_actions if a.get_type() == type_],
+        return sorted([a for a in self._current_actions if isinstance(a, type_)],
             key=lambda x: x.get_priority())
