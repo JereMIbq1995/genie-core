@@ -3,8 +3,8 @@ class KeyBoardService():
     def __init__(self):
         pass
 
-    def on_key_press(self, key):
+    def is_key_pressed(self, *keys):
         pass
 
-    def on_key_release(self, key):
+    def is_key_released(self, *key):
         pass

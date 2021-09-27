@@ -1,3 +1,4 @@
 
 class AudioService:
-    pass
+    def play_sounds(self, actors):
+        pass

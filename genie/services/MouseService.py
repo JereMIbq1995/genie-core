@@ -3,11 +3,17 @@ class MouseService:
     def __init__(self):
         pass
 
-    def on_mouse_click(self, x, y, dx, dy):
+    def is_button_pressed(self, *buttons):
         pass
 
-    def on_mouse_motion(self, x, y, dx, dy):
+    def is_button_released(self, *buttons):
         pass
 
-    def on_mouse_release(self, x, y, dx, dy):
+    def has_mouse_moved(self, x, y, dx, dy):
+        pass
+
+    def get_current_coordinates(self):
+        pass
+
+    def get_last_coordinates(self):
         pass
