@@ -13,6 +13,7 @@ This is the core of the Genie game framework. It consists of important component
         <li> Actions </li>
         <li> Clock </li>
         <li> Input Action </li>
+        <li> Output Action </li>
         <li> Update Action </li>
     </ul>
 </ul>
