@@ -1,6 +1,6 @@
 """
 Copyright 2021, BYU-Idaho.
-Author(s): Matt Manley, Jacob Oliphant
+Author(s): Matt Manley, Jacob Oliphant, Jeremy Duong
 Version: 1.0
 Date: 27-01-2021
 """
