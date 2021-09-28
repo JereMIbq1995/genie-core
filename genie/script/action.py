@@ -45,7 +45,7 @@ class Action(ABC):
             or has finished."""
             pass
 
-    def __init__(self, priority, type : str = ""):
+    def __init__(self, priority):
         self._priority = priority
         
     @abstractmethod
