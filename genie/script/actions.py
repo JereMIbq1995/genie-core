@@ -49,7 +49,7 @@ class Actions:
         """Gets the actions with the given type.
         
         Args:
-            type_: base type, The actions's type (InputAction).
+            type_: base type, The actions's type (InputAction, OutputAction, UpdateAction, etc...).
         
         Returns:
             List[Action]: A list of actions.
