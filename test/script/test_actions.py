@@ -7,6 +7,9 @@ sys.path.append('..')
 
 from genie.script.action import Action
 from genie.script.actions import Actions
+from genie.script.input_action import InputAction
+from genie.script.output_action import OutputAction
+from genie.script.update_action import UpdateAction
 
 PRIORITY_ONE = 1
 PRIORITY_TWO = 2
@@ -14,9 +17,18 @@ PRIORITY_THREE = 3
 
 class TestAction(unittest.TestCase):
     
-    class MockAction(Action):
+    # The following 3 nested classes are for testing purposes
+    class TestInputAction(InputAction):
         def execute(self):
-            print("executing")
+            pass
+    
+    class TestOutputAction(OutputAction):
+        def execute(self):
+            pass
+    
+    class TestUpdateAction(UpdateAction):
+        def execute(self):
+            pass
 
     @classmethod
     def setUpClass(cls):
@@ -24,12 +36,12 @@ class TestAction(unittest.TestCase):
 
     def setUp(self):
         self._actions = Actions()
-        self._action1 = self.MockAction(PRIORITY_ONE, "INPUT")
-        self._action2 = self.MockAction(PRIORITY_TWO, "UPDATE")
-        self._action3 = self.MockAction(PRIORITY_THREE, "OUTPUT")
+        self._action1 = self.TestInputAction(PRIORITY_ONE)
+        self._action2 = self.TestUpdateAction(PRIORITY_TWO)
+        self._action3 = self.TestOutputAction(PRIORITY_THREE)
 
-        self._action4 = self.MockAction(PRIORITY_TWO, "INPUT")
-        self._action5 = self.MockAction(PRIORITY_ONE, "OUTPUT")
+        self._action4 = self.TestInputAction(PRIORITY_TWO)
+        self._action5 = self.TestOutputAction(PRIORITY_ONE)
 
     def tearDown(self):
         pass
@@ -173,7 +185,7 @@ class TestAction(unittest.TestCase):
         self.assertIn(self._action5, self._actions._current_actions)
 
         # INPUT: Only 1 and 4 should return, everything else should NOT return
-        actions_INPUT = self._actions.get_actions("INPUT")
+        actions_INPUT = self._actions.get_actions(InputAction)
         self.assertIn(self._action1, actions_INPUT)
         self.assertIn(self._action4, actions_INPUT)
         self.assertNotIn(self._action2, actions_INPUT)
@@ -181,7 +193,7 @@ class TestAction(unittest.TestCase):
         self.assertNotIn(self._action5, actions_INPUT)
 
         # OUTPUT: Only 3 and 5 should return, everything else should NOT return
-        actions_OUTPUT = self._actions.get_actions("OUTPUT")
+        actions_OUTPUT = self._actions.get_actions(OutputAction)
         self.assertIn(self._action3, actions_OUTPUT)
         self.assertIn(self._action5, actions_OUTPUT)
         self.assertNotIn(self._action1, actions_OUTPUT)
@@ -189,7 +201,7 @@ class TestAction(unittest.TestCase):
         self.assertNotIn(self._action4, actions_OUTPUT)
 
         # UPDATE: Only 2 should return, everything else should NOT return
-        actions_UPDATE = self._actions.get_actions("UPDATE")
+        actions_UPDATE = self._actions.get_actions(UpdateAction)
         self.assertIn(self._action2, actions_UPDATE)
         self.assertNotIn(self._action1, actions_UPDATE)
         self.assertNotIn(self._action3, actions_UPDATE)
@@ -216,12 +228,12 @@ class TestAction(unittest.TestCase):
         self.assertIn(self._action5, self._actions._current_actions)
 
         # 1 should be before 4 since 1 is priority 1, and 4 is priority 2
-        actions_INPUT = self._actions.get_actions("INPUT")
+        actions_INPUT = self._actions.get_actions(InputAction)
         self.assertEqual(self._action1, actions_INPUT[0]) # Priority 1
         self.assertEqual(self._action4, actions_INPUT[1]) # Priority 2
         
         # 5 should be before 3 since 5 is priority 1, and 3 is priority 3
-        actions_OUTPUT = self._actions.get_actions("OUTPUT")
+        actions_OUTPUT = self._actions.get_actions(OutputAction)
         self.assertEqual(self._action5, actions_OUTPUT[0]) # Priority 1
         self.assertEqual(self._action3, actions_OUTPUT[1]) # Priority 3
         
