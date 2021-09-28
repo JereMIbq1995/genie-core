@@ -1,6 +1,6 @@
 """
 Copyright 2021, BYU-Idaho.
-Author(s): Matt Manley, Jacob Oliphant
+Author(s): Matt Manley, Jacob Oliphant, Jeremy Duong
 Version: 1.0
 Date: 27-01-2021
 """
@@ -49,10 +49,10 @@ class Actions:
         """Gets the actions with the given type.
         
         Args:
-            type_: str, The actions's type.
+            type_: base type, The actions's type (InputAction, OutputAction, UpdateAction, etc...).
         
         Returns:
             List[Action]: A list of actions.
         """
-        return sorted(a for a in self._current_actions if isinstance(a, type_),
+        return sorted([a for a in self._current_actions if isinstance(a, type_)],
             key=lambda x: x.get_priority())
