@@ -1,3 +1,0 @@
-
-class GamepadService:
-    pass
