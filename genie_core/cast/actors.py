@@ -5,7 +5,7 @@ Version: 1.0
 Date: 27-01-2021
 """
 from collections import defaultdict
-from genie.cast.actor import Actor
+from genie_core.cast.actor import Actor
 
 class Actors:
     """A collection of actors. 

@@ -5,7 +5,7 @@ import sys
 sys.path.append('..\\..')
 sys.path.append('..')
 
-from genie.script.action import Action
+from genie_core.script.action import Action
 
 PRIORITY_ONE = 1
 PRIORITY_TWO = 2

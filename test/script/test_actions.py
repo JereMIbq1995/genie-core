@@ -1,15 +1,15 @@
 import unittest
 import sys
-  
+
 # setting path
 sys.path.append('..\\..')
 sys.path.append('..')
 
-from genie.script.action import Action
-from genie.script.actions import Actions
-from genie.script.input_action import InputAction
-from genie.script.output_action import OutputAction
-from genie.script.update_action import UpdateAction
+from genie_core.script.action import Action
+from genie_core.script.actions import Actions
+from genie_core.script.input_action import InputAction
+from genie_core.script.output_action import OutputAction
+from genie_core.script.update_action import UpdateAction
 
 PRIORITY_ONE = 1
 PRIORITY_TWO = 2

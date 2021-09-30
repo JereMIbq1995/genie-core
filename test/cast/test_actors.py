@@ -5,8 +5,8 @@ import sys
 sys.path.append('..\\..')
 sys.path.append('..')
 
-from genie.cast.actors import Actors
-from genie.cast.actor import Actor
+from genie_core.cast.actors import Actors
+from genie_core.cast.actor import Actor
 from stub.traits import Blue, Red, CanShoot
 
 class TestActors(unittest.TestCase):

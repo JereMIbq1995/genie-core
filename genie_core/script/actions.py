@@ -4,9 +4,9 @@ Author(s): Matt Manley, Jacob Oliphant, Jeremy Duong
 Version: 1.0
 Date: 27-01-2021
 """
-from genie.script.input_action import InputAction
-from genie.script.output_action import OutputAction
-from genie.script.update_action import UpdateAction
+from genie_core.script.input_action import InputAction
+from genie_core.script.output_action import OutputAction
+from genie_core.script.update_action import UpdateAction
 
 
 class Actions:
