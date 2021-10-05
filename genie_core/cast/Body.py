@@ -28,3 +28,9 @@ class Body(Trait):
     
     def set_width(self, width : float):
         self._width = width
+    
+    def incr_x(self, dx):
+        self._x += dx
+    
+    def incr_y(self, dy):
+        self._y += dy
