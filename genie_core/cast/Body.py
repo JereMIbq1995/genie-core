@@ -13,18 +13,18 @@ class Body(Trait):
     def get_position(self):
         return (self._x, self._y)
     
-    def set_position(self, x, y):
+    def set_position(self, x : float, y : float):
         self._x = x
         self._y = y
     
     def get_height(self):
         return self._height
     
-    def set_height(self, height):
+    def set_height(self, height : float):
         self._height = height
     
     def get_width(self):
         return self._width
     
-    def set_width(self, width):
+    def set_width(self, width : float):
         self._width = width
