@@ -17,3 +17,6 @@ This is the core of the Genie game framework. It consists of important component
         <li> Update Action </li>
     </ul>
 </ul>
+
+To install this project using pip, run the following command:<br>
+	python -m pip install --index-url https://test.pypi.org/simple/ --no-deps genie-core-jeremi1995
