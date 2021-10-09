@@ -4,13 +4,13 @@ Author(s): Matt Manley, Jacob Oliphant
 Version: 1.0
 Date: 27-01-2021
 """
-from genie.cast.actors import Actors
-from genie.script.clock import Clock
-from genie.script.action import Action
-from genie.script.actions import Actions
-from genie.script.input_action import InputAction
-from genie.script.output_action import OutputAction
-from genie.script.update_action import UpdateAction
+from .cast.actors import Actors
+from .script.clock import Clock
+from .script.action import Action
+from .script.actions import Actions
+from .script.input_action import InputAction
+from .script.output_action import OutputAction
+from .script.update_action import UpdateAction
 
 
 class Director(Action.Callback):
