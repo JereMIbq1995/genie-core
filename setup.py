@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="UTF-8") as f:
 
 setuptools.setup(
     name="genie-core-jeremi1995",
-    version="0.0.3",
+    version="0.0.4",
     author="Jeremy Duong",
     author_email="jeremibq@gmail.com",
     description="A small example calculator package",
