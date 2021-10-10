@@ -65,5 +65,5 @@ class Clock:
         self._previous = current
         self._lag += elapsed
         self._frames += 1
-        self._calc_stats(elapsed)
+        # self._calc_stats(elapsed)
         
