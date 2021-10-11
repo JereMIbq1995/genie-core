@@ -2,11 +2,15 @@ from .trait import Trait
 
 class Body(Trait):
     def __init__(self, x : float = 0, 
-                    y : float = 0, 
+                    y : float = 0,
+                    vx : float = 0,
+                    vy : float = 0,
                     height : float = 0, 
                     width : float = 0):
         self._x = x
         self._y = y
+        self._vx = vx
+        self._vy = vy
         self._height = height
         self._width = width
     
@@ -34,3 +38,10 @@ class Body(Trait):
     
     def incr_y(self, dy):
         self._y += dy
+    
+    def move(self):
+        """
+            Move the object if the velocities are > 0
+        """
+        self._x += self._vx
+        self._y += self._vy
