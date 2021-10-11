@@ -20,6 +20,30 @@ class Body(Trait):
     def set_position(self, x : float, y : float):
         self._x = x
         self._y = y
+
+    def get_x(self):
+        return self._x
+    
+    def get_y(self):
+        return self._y
+    
+    def set_x(self, x):
+        self._x = x
+    
+    def set_y(self, y):
+        self._y = y
+
+    def get_vx(self):
+        return self._vx
+    
+    def get_vy(self):
+        return self._vy
+    
+    def set_vx(self, vx):
+        self._vx = vx
+    
+    def set_vy(self, vy):
+        self._vy = vy
     
     def get_height(self):
         return self._height
