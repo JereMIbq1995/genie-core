@@ -66,6 +66,7 @@ class Body(Trait):
     def move(self):
         """
             Move the object if the velocities are > 0
+            There's more to think about this function
         """
         self._x += self._vx
         self._y += self._vy
